@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: aquamarine; */
+        }
+        
+        #content{
+            /* background-color: rgb(187, 70, 197); */
+            margin-top: 10px;
+            width: 500px;
+            height: auto;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+
+        }
+        img{
+           width: 100%;
+           height: 100%;
+            
+        }
+        .content h1{
+            margin: 10px;
+            text-align: center;
+        }
+        .content label{
+            margin-top: 10px;
+            margin-left: 60px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .content input{
+            width: 70%;
+            margin-top: 10px;
+            margin-left: 60px;
+            padding: 10px;
+        }
+        .content button{
+            margin-top: 20px;
+            margin-left: 40%;
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            box-shadow: rgba(50,50,93,0.25)0px 6px 12px -2px,rgba(0,0,0,0.3)0px 3px 7px -3px;
+
+        }
+        .content p{
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .content.image{
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 300px;
+            
+           
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <h1>Check Season</h1>
+        <label for="Month">Enter Month :</label> <br>
+        <input type="text" name="Month" id="Month"> <br>
+        <button onclick="CheckSeason()">Check Season</button>
+        <p id="Season">
+
+        </p>
+        <div id="image">
+
+        </div>
+    </div>
+    <script>
+        function CheckSeason(){
+            let MonthVal=document.getElementById("Month").value;
+
+            let Month=MonthVal.toUpperCase();
+            
+
+            
+            if(Month=="DECEMBER" || Month=="JANUARY"){
+                document.getElementById("Season").innerHTML="Winter";
+                document.body.style.backgroundColor="pink";
+                
+                document.getElementById("image").innerHTML=
+                `
+                <img src=./images/Winter.jpg>
+                `
+                console.log("Winter");
+            }
+            else if(Month == "FEBRUARY" || Month == "MARCH"){
+                console.log("Spring");
+                document.getElementById("Season").innerHTML="Spring";
+                document.body.style.backgroundColor="skyblue";
+                
+                document.getElementById("image").innerHTML=
+                `
+                <img src=./images/Spring.webp>
+                `
+                
+            }
+            else if(Month=="APRIL" || Month=="MAY" || Month=="JUNE"){
+                document.getElementById("Season").innerHTML="Summer";
+                document.body.style.backgroundColor="lightgreen";
+                
+                document.getElementById("image").innerHTML=
+                `
+                <img src=./images/Summer.jpg>
+                `
+                
+            }
+            else if(Month=="JULY" || Month=="SEPTEMBER" ){
+                document.getElementById("Season").innerHTML="Monsoon";
+                document.body.style.backgroundColor="yellow";
+                
+                document.getElementById("image").innerHTML=
+                `
+                <img src=./images/Monsoon.jpg>
+                `
+                
+            }
+            else if(Month=="OCTOBER" || Month=="NOVEMBER" ){
+                document.getElementById("Season").innerHTML="Autumn";
+                document.body.style.backgroundColor="grey";
+                
+                document.getElementById("image").innerHTML=
+                `
+                <img src=./images/Autumn.jpg>
+                `
+                
+            }
+            else{
+                document.getElementById("Season").innerHTML="Wrong Input";
+                document.body.style.backgroundColor="Red";
+            }
+           
+        
+           
+                
+
+        }
+        
+    </script>
+    
+    
+
+    
+    
+    <!-- //    let month=prompt("enter month");
+    
+    //    switch(month){
+    //        case 0:
+
+            //    let month= prompt('Enter mmonth');
+            //    if(month==="December" || month==="January" || month==="February" ){
+            //        console.log("winter");
+                   
+            //        document.getElementById("season").innerHTML="Winter";
+
+            //    }
+            //    else if(month=="March" || month=="April" || month=="May"){
+               
+            //     document.getElementById("season").innerHTML="Spring";
+
+            //    }
+            //    else if(month=="June" || month=="July" || month=="August"){
+            //     document.getElementById("season").innerHTML="Summer";
+                
+
+            //    }
+            //    else if(month=="September" || month=="Auctober" || month=="November"){
+                
+            //     document.getElementById("season").innerHTML="Fall or  Autumn";
+
+            //    }
+
+
+            //    break;
+            //    default :
+            //    season="wrong input";
+            //    break;
+            //    break;
+            //    case 1:
+            //    if(month==March && month==April && month==May ){
+            //        season="Spring";
+
+            //    }
+            //    break;
+            //    case 0:
+            //    if(month==June && month==July && month==August ){
+            //        season="Summer";
+
+            //    }
+            //    break;
+            //    case 0:
+            //    if({
+            //        season="autumn or Fall";
+
+            //    }month==September && month==Auctober && month==November )
+            //    break;
+    //    } -->
+       
+    
+</body>
+</html>
